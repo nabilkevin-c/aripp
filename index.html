@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pegawai</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabel Data Pegawai</h1>
+    <table id="pegawaiTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nama</th>
+                <th>Posisi</th>
+                <th>Usia</th>
+                <th>Gaji</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data pegawai akan dimasukkan di sini -->
+        </tbody>
+    </table>
+
+    <script>
+        // Membuat array yang berisi data pegawai
+        let pegawai = [
+            { id: 1, nama: "Abudi", posisi: "Manajer", usia: 30, gaji: 12000000 },
+            { id: 2, nama: "Agus", posisi: "Asisten Manajer", usia: 25, gaji: 25000000 },
+            { id: 3, nama: "Asep setiawan", posisi: "Staf HRD", usia: 23, gaji: 6000000 },
+            { id: 4, nama: "Rina Puspita", posisi: "Staf Keuangan", usia: 30, gaji: 5500000 },
+            { id: 5, nama: "Jokowi dodo", posisi: "Staf IT", usia: 27, gaji: 7000000 }
+        ];
+
+        // Menampilkan data pegawai ke dalam tabel
+        const tabelBody = document.querySelector("#pegawaiTable tbody");
+
+        pegawai.forEach(function(pegawaiData) {
+            // Membuat elemen baris <tr>
+            let row = document.createElement("tr");
+
+            // Menambahkan kolom ID
+            let cell1 = document.createElement("td");
+            cell1.textContent = pegawaiData.id;
+            row.appendChild(cell1);
+
+            // Menambahkan kolom Nama
+            let cell2 = document.createElement("td");
+            cell2.textContent = pegawaiData.nama;
+            row.appendChild(cell2);
+
+            // Menambahkan kolom Posisi
+            let cell3 = document.createElement("td");
+            cell3.textContent = pegawaiData.posisi;
+            row.appendChild(cell3);
+
+            // Menambahkan kolom Usia
+            let cell4 = document.createElement("td");
+            cell4.textContent = pegawaiData.usia;
+            row.appendChild(cell4);
+
+            // Menambahkan kolom Gaji
+            let cell5 = document.createElement("td");
+            cell5.textContent = pegawaiData.gaji;
+            row.appendChild(cell5);
+
+            // Menambahkan baris ke dalam tubuh tabel
+            tabelBody.appendChild(row);
+        });
+    </script>
+</body>
+</html>
